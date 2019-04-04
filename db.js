@@ -8,7 +8,7 @@ module.exports = {
   addThing,
   delThing,
   editThing
-  
+}
   
   function getThings (db = connection) {
   return db('things').select()
