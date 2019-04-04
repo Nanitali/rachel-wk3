@@ -21,4 +21,14 @@ router.get('/things/:id', (req, res) => {
       res.render('thing', { thing })
     })
 })
+
+router.get('/things/add', (req, res) => {
+  res.render('add')
+})
+router.post('/things/add', (req, res) => {
+  const formData = { name: req.body.name, url: req.body.url, shininess: req.body.shininess, carbohydrate: req.body.carbohydrate, stealth: req.body.stealth }
+  db.addUser(formData.name, formData.url, formData.shininess, formData.carbohydrate, formData.stealth)
+  res.redirect('/things')
+})
+
 module.exports = router
