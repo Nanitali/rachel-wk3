@@ -3,14 +3,41 @@ const config = require('./knexfile')[environment]
 const connection = require('knex')(config)
 
 module.exports = {
-  getUser: getUser,
-  getUsers: getUsers
+  getThing,
+  getThings,
+  addThing,
+  delThing,
+  editThing
+  
+  
+  function getThings (db = connection) {
+  return db('things').select()
 }
 
-function getUsers (db = connection) {
-  return db('users').select()
+function getThing (id, db = connection) {
+  return db('things').where('id', id).first()
+    .select()
+
 }
 
-function getUser (id, db = connection) {
-  return db('users').where('id', id).first()
+function addThing (thing) {
+  return db('things')
+  .insert(thing)
+}
+// what are the columns we need to insert
+// does db team need to insert or routes team?
+// what are handlesbars names used
+
+
+
+function delThing (thing){
+  return db('things')
+  .del()
+}
+
+
+function editThing (thing) {
+  return db('things')
+    .where('things')
+    .update()
 }
