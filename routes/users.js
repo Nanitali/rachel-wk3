@@ -8,6 +8,11 @@ router.get('/', (req, res) => {
   res.render('index')
 })
 
+router.post('/', (req, res) => {
+  db.getThings()
+    .then(() => res.redirect('/'))
+})
+
 router.get('/things', (req, res) => {
   db.getThings()
     .then(things => {
@@ -18,7 +23,7 @@ router.get('/things', (req, res) => {
 router.get('/things/:id', (req, res) => {
   db.getThing(req.params.id)
     .then(thing => {
-      res.render('thing', { thing })
+      res.render('thing', thing)
     })
 })
 module.exports = router
