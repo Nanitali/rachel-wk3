@@ -4,14 +4,9 @@ Tghis is the background image. thank you :-)
 
 http://nt5yq3utq8x4evnfr127ybql-wpengine.netdna-ssl.com/wp-content/uploads/2017/06/ThePit.jpg
 
+NEW ONE
 
-hi again,
-
-COuld we please have this image as the 'vs'
-
-https://banner2.kisspng.com/20180607/sby/kisspng-mortal-kombat-vs-dc-universe-injustice-2-shao-kah-5b18f9531fdd27.9369021415283633471305.jpg
-
-
+https://www.google.co.nz/url?sa=i&source=images&cd=&cad=rja&uact=8&ved=2ahUKEwi48YCOz7fhAhXITX0KHeA4B6cQjRx6BAgBEAU&url=https%3A%2F%2Fboards.na.leagueoflegends.com%2Ffr%2Fc%2Fskin-champion-concepts%2FHNlyprZd-the-next-vs-event%3Fshow%3Dnew&psig=AOvVaw0IEOw9XpPChohswKkE6klT&ust=1554507812452797
 
 
 ## MVP
