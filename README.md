@@ -1,24 +1,14 @@
-# Boilerplate: Knex.js
+## MVP
 
-Phase 1 boilerplate project with:
-
- - Express
- - Knex
- - SQLite3
- - Express Handlebars
- - body-parser
- - Jest
- - nodemon
+As a user I want to get and list all the things
+As a user I want to be able to check an invidiual things profile
+As a user i want to be able to select two random things to display
 
 
-## Install
 
-```
-npm install
-npx knex migrate:latest
-npx knex seed:run
-npm run dev
-```
+## Stretch
 
-Be sure to check out the other npm scripts too.
-
+As a user i want to be able to see a win count for each thing
+As an administrator i want to be able to add a thing
+As an administrator i want to be able to delete a thing
+As an administrator i want to be able to change a thing
