@@ -9,32 +9,28 @@ module.exports = {
   delThing,
   editThing
 }
-  
-  function getThings (db = connection) {
+
+function getThings (db = connection) {
   return db('things').select()
 }
 
 function getThing (id, db = connection) {
   return db('things').where('id', id).first()
     .select()
-
 }
 
 function addThing (thing) {
   return db('things')
-  .insert(thing)
+    .insert(thing)
 }
 // what are the columns we need to insert
 // does db team need to insert or routes team?
 // what are handlesbars names used
 
-
-
-function delThing (thing){
+function delThing (thing) {
   return db('things')
-  .del()
+    .del()
 }
-
 
 function editThing (thing) {
   return db('things')
