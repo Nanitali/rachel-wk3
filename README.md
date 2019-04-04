@@ -1,3 +1,12 @@
+HI Alice,
+
+Tghis is the background image. thank you :-)
+
+http://nt5yq3utq8x4evnfr127ybql-wpengine.netdna-ssl.com/wp-content/uploads/2017/06/ThePit.jpg
+
+
+
+
 ## MVP
 
 As a user I want to get and list all the things
