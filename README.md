@@ -5,6 +5,13 @@ Tghis is the background image. thank you :-)
 http://nt5yq3utq8x4evnfr127ybql-wpengine.netdna-ssl.com/wp-content/uploads/2017/06/ThePit.jpg
 
 
+hi again,
+
+COuld we please have this image as the 'vs'
+
+https://banner2.kisspng.com/20180607/sby/kisspng-mortal-kombat-vs-dc-universe-injustice-2-shao-kah-5b18f9531fdd27.9369021415283633471305.jpg
+
+
 
 
 ## MVP
