@@ -4,11 +4,6 @@ Tghis is the background image. thank you :-)
 
 http://nt5yq3utq8x4evnfr127ybql-wpengine.netdna-ssl.com/wp-content/uploads/2017/06/ThePit.jpg
 
-NEW ONE
-<a href="https://pngtree.com/free-vectors">free vectors from pngtree.com</a>
-
-
-
 
 
 ## MVP
