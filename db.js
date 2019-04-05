@@ -29,3 +29,4 @@ function editThing (id, name, url, shininess, carbohydrate, stealth, db = connec
     .where({ id: id })
     .update({ name, url, shininess, carbohydrate, stealth })
 }
+

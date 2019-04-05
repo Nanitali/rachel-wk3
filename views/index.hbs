@@ -1,1 +1,58 @@
+<div class="background">
+  <div class="container">
+    <div class="oponent">
+      <img src="{{thing1.url}}">
+      <h3>{{thing1.name}}</h3>
+      <div class="stats">
+        <h5>Shininess: {{thing1.shininess}}</h5>
+        <h5>Carbohydrate: {{thing1.carbohydrate}}</h5>
+        <h5>Stealth: {{thing1.stealth}}</h5>
+      </div>
+    </div>
+    <div>
+      <h3 class="vs"></h3>
+    </div>
+    <div class="oponent">
+      <img src="{{thing2.url}}">
+      <h3>{{thing2.name}}</h3>
+      <div class="stats">
+        <h5>Shininess: {{thing2.shininess}}</h5>
+        <h5>Carbohydrate: {{thing2.carbohydrate}}</h5>
+        <h5>Stealth: {{thing2.stealth}}</h5>
+      </div>
+    </div>
+  </div>
+  <div class="">
+    <h1 class="message">Get ready...</h1>
+  </div>
+  <div class="form-container">
+    <form action="/random" method="get">
+      <input type="submit" value="try another one">
+    </form>
+  </div>
+</div>
+<p class="hidden">{{thing1.name}}</p>
 
+<script>
+
+  const updateMessage = (string) => {
+    message = document.querySelector('.message')
+    message.innerHTML = string
+  }
+
+  window.addEventListener("load", () => {
+    let count = 3
+    const countDown = setInterval(() => {
+      const winnerName = document.querySelector('.hidden').innerHTML
+      updateMessage(count)
+      if (count === 0) {
+        console.log('here')
+        clearInterval(countDown)
+        updateMessage(`${winnerName} wins!!!`)
+      }
+      count--
+      console.log(count)
+    }, 1000)
+  })
+
+</script>

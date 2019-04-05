@@ -1,7 +1,12 @@
 <h2>Things:</h2>
 
 {{#each things}}
-  <img src="{{url}}">
-  <h3>{{name}}{{species}}</h3>
+<hr>
+<a href="/things/{{id}}">
+  <div class="thing-summary">
+    <img src="{{url}}">
+    <h4>{{name}} ({{species}})</h4>
+  </div>
+</a>
+<hr>
 {{/each}}
-
