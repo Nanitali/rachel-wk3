@@ -1,19 +1,24 @@
 <div>
   <h2>👇 Edit contender profile 👇 </h2>
-  <form action="/thing/edit/{{id}}" method="POST">
+  <form action="/things/edit/{{id}}" method="POST">
+    Your current name: <span>{{name}}</span><br><br>
     Contenders Name:<br>
     <input type="text" name="name" placeholder="write name here">
     <br>
+     Your current url: <span>{{url}}</span><br><br>
     URL:<br>
     <input type="text" name="url" placeholder="url">
-    Shininess:<br>
-     <input type="text" name="shininess" number="input level out of 5">
     <br>
+     Your current shininess: <span>{{shininess}}</span><br><br>Shininess:<br>
+     <input type="text" name="shininess" placeholder ="input level out of 5">
+    <br>
+     Your current carbohydrate: <span>{{carbohydrate}}</span><br><br>
     carbohydrate:<br>
-     <input type="text" name="carbohydrate" number="input level out of 5">
+     <input type="text" name="carbohydrate" placeholder ="input level out of 5">
     <br>
+     Your current stealth: <span>{{stealth}}</span><br><br>
     stealth: <br>
-     <input type="text" name="stealth" number="input level out of 5">
+     <input type="text" name="stealth" placeholder ="input level out of 5">
     <br><br>
     <input type="submit" value="Update">
   </form>

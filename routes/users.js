@@ -47,6 +47,20 @@ router.get('/things', (req, res) => {
     })
 })
 
+router.get('/things/add', (req, res) => {
+  res.render('add', req.params.id)
+})
+router.post('/things/add', (req, res) => {
+  const formData = {
+    name: req.body.name,
+    url: req.body.url,
+    shininess: req.body.shininess,
+    carbohydrate: req.body.carbohydrate,
+    stealth: req.body.stealth }
+  db.addThing(formData.name, formData.url, formData.shininess, formData.carbohydrate, formData.stealth)
+    .then(res.redirect('/things'))
+})
+
 router.get('/things/:id', (req, res) => {
   db.getThing(req.params.id)
     .then(thing => {
@@ -54,16 +68,7 @@ router.get('/things/:id', (req, res) => {
     })
 })
 
-router.get('/things/add', (req, res) => {
-  res.render('add')
-})
-router.post('/things/add', (req, res) => {
-  const formData = { name: req.body.name, url: req.body.url, shininess: req.body.shininess, carbohydrate: req.body.carbohydrate, stealth: req.body.stealth }
-  db.addThing(formData.name, formData.url, formData.shininess, formData.carbohydrate, formData.stealth)
-  res.redirect('/things')
-})
-
-router.get('/thing/edit/:id', (req, res) => {
+router.get('/things/edit/:id', (req, res) => {
   const id = req.params.id
   db.getThing(id)
     .then(thing => {
@@ -71,10 +76,14 @@ router.get('/thing/edit/:id', (req, res) => {
     })
 })
 
-router.post('/thing/edit/:id', (req, res) => {
-  const formData = { name: req.body.name, url: req.body.url, shininess: req.body.shininess, carbohydrate: req.body.carbohydrate, stealth: req.body.stealth }
+router.post('/things/edit/:id', (req, res) => {
+  const formData = { name: req.body.name,
+    url: req.body.url,
+    shininess: req.body.shininess,
+    carbohydrate: req.body.carbohydrate,
+    stealth: req.body.stealth }
   db.editThing(req.params.id, formData.name, formData.url, formData.shininess, formData.carbohydrate, formData.stealth)
-    .then(res.redirect('/thing'))
+    .then(res.redirect('/things'))
 })
 
 module.exports = router
