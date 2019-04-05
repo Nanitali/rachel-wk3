@@ -4,7 +4,7 @@
     <h3>{{thing1.name}}</h3>
   </div>
   <div class="vs">
-    <h3>vs.</h3>
+    <h3 class="message">vs.</h3>
   </div>
    <div class="oponent">
     <img src="{{thing2.url}}">
@@ -16,3 +16,25 @@
     <input type="submit" value="try another one">
   </form>
 </div>
+
+<script>
+
+const updateMessage = (string) => {
+  message = document.querySelector('.message')
+  message.innerHTML = string
+}
+  window.addEventListener("load", () => {
+    let count = 3
+    const countDown = setInterval(() => {
+      updateMessage(count)
+        if(count === 0) {
+        console.log('here')
+        clearInterval(countDown)
+        updateMessage('THIS ONE wins')
+      }
+      count--
+      console.log(count)
+    }, 1000) 
+  })
+
+</script>

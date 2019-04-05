@@ -21,6 +21,7 @@ img {
   flex-wrap: nowrap;
   justify-content: center;
   margin: 30px;
+  align-items: center;
 }
 
 .oponent {
@@ -30,11 +31,6 @@ img {
 .vs {
   margin: 0px 100px 0px 100px;
   vertical-align: middle;
-}
-
-.vs h3 {
-  position: absolute;
-  top: 40%;
 }
 
 .form-container {
@@ -53,4 +49,22 @@ img {
 
 .thing-profile {
   margin: 30px;
+}
+
+
+.message-vs {
+  height: 100px;
+  width: 100px;
+  background-image: url('/vsLogo.png');
+  background-repeat: no-repeat;
+  background-size: 100%;
+  top: 40%;
+}
+
+.message {
+  height: 100px;
+  width: 100px;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  top: 40%;
 }
