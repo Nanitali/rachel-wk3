@@ -9,7 +9,7 @@ exports.seed = function (knex, Promise) {
         { id: 5, name: 'Hoverboard', url: 'https://i.kinja-img.com/gawker-media/image/upload/s--Il3hAWvL--/c_scale,f_auto,fl_progressive,q_80,w_800/thhgxl7kfsppfbrbvqbp.jpg', shininess: 3, carbohydrate: 3, stealth: 1 },
         { id: 6, name: 'Weet-bix', url: 'https://previews.123rf.com/images/jabiru/jabiru1103/jabiru110300075/9011575-iconic-australian-breakfast-cereal-weet-bix-served-in-a-bowl-.jpg', shininess: 0, carbohydrate: 5, stealth: 3 },
         { id: 7, name: 'Nemo', url: 'https://media.npr.org/assets/img/2013/02/08/nemo072way_custom-9c0f9196c8e635b53fa1dedecc2d36a1f04b3b28-s800-c85.jpg', shininess: 5, carbohydrate: 2, stealth: 5 },
-        { id: 8, name: 'Chako', url: 'https://raw.githubusercontent.com/Nanitali/nanitali.github.io/master/Maine-coon%20blog/chako.jpg', shininess: 5, carbohydrate: 5, stealth: 5 },
+        { id: 8, name: 'Chako', url: 'https://raw.githubusercontent.com/Nanitali/nanitali.github.io/master/Maine-coon%20blog/chako.jpg', shininess: 1, carbohydrate: 5, stealth: 5 },
         { id: 9, name: 'Full Cookie Jar', url: 'https://i.etsystatic.com/7516676/r/il/c73dda/863506629/il_fullxfull.863506629_fy6c.jpg', shininess: 3, carbohydrate: 3, stealth: 4 },
         { id: 10, name: 'Bubble Tea', url: 'http://tul.imgix.net/content/article/bubble-tea-ranking.jpg', shininess: 2, carbohydrate: 4, stealth: 2 }
       ])

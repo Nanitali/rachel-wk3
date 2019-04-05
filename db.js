@@ -12,7 +12,7 @@ module.exports = {
 function getThings (db = connection) {
   return db('things')
     .join('species', 'things.id', 'species.things_id')
-    .select('things.id as id', 'things.name', 'species.species', 'things.url')
+    .select('things.id as id', 'things.name', 'species.species', 'things.url', 'things.stealth', 'things.shininess', 'things.carbohydrate')
 }
 
 function getThing (id, db = connection) {
