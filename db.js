@@ -14,7 +14,9 @@ function getThings (db = connection) {
 }
 
 function getThing (id, db = connection) {
-  return db('things').where('id', id).first()
+  return db('things')
+    .where({ id : id })
+    .first()
     .select()
 }
 
@@ -23,10 +25,8 @@ function addThing (name, url, shininess, carbohydrate, stealth, db = connection)
     .insert({ name, url, shininess, carbohydrate, stealth })
 }
 
-
 function editThing (id, name, url, shininess, carbohydrate, stealth, db = connection) {
   return db('things')
     .where({ id: id })
     .update({ name, url, shininess, carbohydrate, stealth })
 }
-
