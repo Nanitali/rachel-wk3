@@ -7,7 +7,7 @@ exports.seed = function (knex, Promise) {
         {id: 101 ,things_id: 1, species: 'Consumables' },
         {id: 102,things_id: 2, species: 'Book' },
         {id: 103 ,things_id: 3, species: 'Mammal' },
-        {id: 104 ,things_id: 4, species: 'Apperal' },
+        {id: 104 ,things_id: 4, species: 'Apparel' },
         {id: 105 ,things_id: 5, species: 'Tech' },
         {id: 106 ,things_id: 6, species: 'Consumables' },
         {id: 107 ,things_id: 7, species: 'Animation' },

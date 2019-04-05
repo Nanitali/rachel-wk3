@@ -48,7 +48,6 @@ router.get('/things', (req, res) => {
 })
 
 router.get('/things/add', (req, res) => {
-
   res.render('add', req.params.id)
 })
 router.post('/things/add', (req, res) => {
@@ -60,16 +59,18 @@ router.post('/things/add', (req, res) => {
     stealth: req.body.stealth }
   db.addThing(formData.name, formData.url, formData.shininess, formData.carbohydrate, formData.stealth)
     .then(res.redirect('/things'))
-
 })
 
 router.get('/things/:id', (req, res) => {
   db.getThing(req.params.id)
     .then(thing => {
+      console.log(thing)
+      return thing
+    })
+    .then(thing => {
       res.render('thing', thing)
     })
 })
-
 
 router.get('/things/edit/:id', (req, res) => {
   const id = req.params.id
@@ -77,7 +78,6 @@ router.get('/things/edit/:id', (req, res) => {
     .then(thing => {
       res.render('thingEdit', thing)
     })
-
 })
 
 router.post('/things/edit/:id', (req, res) => {
@@ -89,7 +89,6 @@ router.post('/things/edit/:id', (req, res) => {
   db.editThing(req.params.id, formData.name, formData.url, formData.shininess, formData.carbohydrate, formData.stealth)
 
     .then(res.redirect('/things'))
-
 })
 
 module.exports = router
