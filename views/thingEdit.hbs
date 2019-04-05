@@ -1,9 +1,6 @@
-
 <div>
- <h1>If You Dare</h1>
- 
-  <h2>👇 Add new contender 👇 </h2>
-  <form action="/things/add" method="POST">
+  <h2>👇 Edit contender profile 👇 </h2>
+  <form action="/thing/edit/{{id}}" method="POST">
     Contenders Name:<br>
     <input type="text" name="name" placeholder="write name here">
     <br>
@@ -18,11 +15,10 @@
     stealth: <br>
      <input type="text" name="stealth" number="input level out of 5">
     <br><br>
-    <input type="submit" value="Add">
+    <input type="submit" value="Update">
   </form>
-  
 </div>
-    <style>
+  <style>
 div {
   text-align: center
 }

@@ -6,7 +6,6 @@ module.exports = {
   getThing,
   getThings,
   addThing,
-  delThing,
   editThing
 }
 
@@ -24,11 +23,6 @@ function addThing (name, url, shininess, carbohydrate, stealth, db = connection)
     .insert({ name, url, shininess, carbohydrate, stealth })
 }
 
-function delThing (id, db = connection) {
-  return db('things')
-    .where({ id: id })
-    .del()
-}
 
 function editThing (id, name, url, shininess, carbohydrate, stealth, db = connection) {
   return db('things')
