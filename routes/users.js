@@ -22,9 +22,8 @@ router.get('/random', (req, res) => {
       } else if (thing1Total < thing2Total) {
         winner = thing2.name
       } else {
-        winner = 'draw'
+        winner = 'No one'
       }
-      console.log(winner)
       res.render('index', { thing1, thing2, winner })
     })
 })
@@ -66,17 +65,16 @@ router.post('/things/add', (req, res) => {
 
 router.get('/thing/edit/:id', (req, res) => {
   const id = req.params.id
-  db.getThing(id) 
-  .then(thing => {res.render('thingEdit', thing)
+  db.getThing(id)
+    .then(thing => {
+      res.render('thingEdit', thing)
+    })
 })
 
 router.post('/thing/edit/:id', (req, res) => {
   const formData = { name: req.body.name, url: req.body.url, shininess: req.body.shininess, carbohydrate: req.body.carbohydrate, stealth: req.body.stealth }
   db.editThing(req.params.id, formData.name, formData.url, formData.shininess, formData.carbohydrate, formData.stealth)
-  .then(res.redirect('/thing'))
-
+    .then(res.redirect('/thing'))
 })
-
-
 
 module.exports = router
