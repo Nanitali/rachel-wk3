@@ -10,12 +10,14 @@ module.exports = {
 }
 
 function getThings (db = connection) {
-  return db('things').select()
+  return db('things')
+    .join('species', 'things.id', 'species.things_id')
+    .select()
 }
 
 function getThing (id, db = connection) {
   return db('things')
-    .where({ id : id })
+    .where({ id: id })
     .first()
     .select()
 }
