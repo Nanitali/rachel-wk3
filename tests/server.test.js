@@ -2,25 +2,37 @@ const request = require('supertest')
 const cheerio = require('cheerio')
 
 jest.mock('../db', () => ({
-  getUser: (id) => Promise.resolve(
-    {id: id, name: 'test user', email: 'test@user.nz'}
+  getThing: (id) => Promise.resolve(
+    { id: id, name: 'thing1', url: '', shininess: 5, carbohydrate: 5, stealth: 5 }
   ),
-  getUsers: () => Promise.resolve([
-    {id: 2, name: 'test user 2', email: 'test2@user.nz'},
-    {id: 4, name: 'test user 4', email: 'test4@user.nz'}
+  getThings: () => Promise.resolve([
+    { id: 1, name: 'thing1', url: '', shininess: 5, carbohydrate: 5, stealth: 5 },
+    { id: 2, name: 'thing2', url: '', shininess: 0, carbohydrate: 0, stealth: 0 }
   ])
 }))
 
 const server = require('../server')
 
-test('GET /', () => {
+test('GET /things shows a list of all things', () => {
   return request(server)
-    .get('/')
+    .get('/things')
     .expect(200)
     .then((res) => {
       const $ = cheerio.load(res.text)
-      const firstLiText = $('li').first().text()
-      expect(firstLiText).toBe('test user 2 (test2@user.nz)')
+      const h4s = $('h4').length
+      expect(h4s).toBe(2)
+    })
+    .catch(err => expect(err).toBeNull())
+})
+
+test('GET /random calculates the winner of 2 things', () => {
+  return request(server)
+    .get('/random')
+    .expect(200)
+    .then((res) => {
+      const $ = cheerio.load(res.text)
+      const winner = $('p').text()
+      expect(winner).toBe('thing1')
     })
     .catch(err => expect(err).toBeNull())
 })

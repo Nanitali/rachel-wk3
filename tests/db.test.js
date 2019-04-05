@@ -10,22 +10,55 @@ beforeEach(() => {
 
 afterEach(() => testEnv.cleanup(testDb))
 
-test('getUsers gets all users', () => {
-  // One for each letter of the alphabet!
+test('getThings gets all things', () => {
   const expected = 3
-  return db.getUsers(testDb)
-    .then(users => {
-      const actual = users.length
+  return db.getThings(testDb)
+    .then(things => {
+      const actual = things.length
       expect(actual).toBe(expected)
     })
     .catch(err => expect(err).toBeNull())
 })
 
-test('getUser gets a single user', () => {
-  const expected = 'test user 1'
-  return db.getUser(99901, testDb)
-    .then(user => {
-      const actual = user.name
+test('getThing gets a single thing', () => {
+  const expected = 'thing2'
+  return db.getThing(2, testDb)
+    .then(thing => {
+      const actual = thing.name
+      expect(actual).toBe(expected)
+    })
+    .catch(err => expect(err).toBeNull())
+})
+
+test('addThing adds a thing', () => {
+  const expectedLength = 4
+  const expectedName = 'test3'
+  return db.addThing('test3', '', 5, 5, 5, testDb)
+    .then(() => {
+      return db.getThings(testDb)
+    })
+    .then(things => {
+      const actual = things.length
+      expect(actual).toBe(expectedLength)
+    })
+    .then(() => {
+      return db.getThing(4, testDb)
+    })
+    .then(thing => {
+      const actual = thing.name
+      expect(actual).toBe(expectedName)
+    })
+    .catch(err => expect(err).toBeNull())
+})
+
+test('editThing changes a thing', () => {
+  const expected = 'newName'
+  return db.editThing(2, 'newName', 'newUrl', 2, 2, 2, testDb)
+    .then(() => {
+      return db.getThing(2, testDb)
+    })
+    .then(thing => {
+      const actual = thing.name
       expect(actual).toBe(expected)
     })
     .catch(err => expect(err).toBeNull())
